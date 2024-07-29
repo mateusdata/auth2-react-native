@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>726353729050-4mk6f6k9q8pljp8inrksvsr3ok2h3r0v.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.726353729050-4mk6f6k9q8pljp8inrksvsr3ok2h3r0v</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>726353729050-553ac18i78k06nh03k0mdp0p4c7bbbep.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyARiQI4Fg9AZ7-xVQPT8HwK1EcE2rgCWLw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>726353729050</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.projetofono10.datacompras</string>
+	<key>PROJECT_ID</key>
+	<string>data-59e18</string>
+	<key>STORAGE_BUCKET</key>
+	<string>data-59e18.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:726353729050:ios:7d481efc1fe8e221a963a3</string>
+</dict>
+</plist>

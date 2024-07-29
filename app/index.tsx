@@ -34,7 +34,7 @@ export default function App() {
       setUser(userInfo);
       console.log(userInfo);
       alert("Deu certo caralho")
-      //sendTokenToBackend(userInfo.idToken)
+      sendTokenToBackend(userInfo.idToken)
 
     } catch (error: any) {
       console.log(error)

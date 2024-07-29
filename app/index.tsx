@@ -1,6 +1,6 @@
 import { Link } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View, Image } from 'react-native';
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -34,7 +34,7 @@ export default function App() {
       setUser(userInfo);
       console.log(userInfo);
       alert("Deu certo caralho")
-      sendTokenToBackend(userInfo.idToken)
+      //sendTokenToBackend(userInfo.idToken)
 
     } catch (error: any) {
       console.log(error)
@@ -83,21 +83,72 @@ export default function App() {
   
   return (
     <View style={styles.container}>
-      <Text>Pagina inicials</Text>
-      <Button title='Fazer login' onPress={_signIn} />
+      <Text style={styles.title}>Página Inicial</Text>
+      
+      <Button title='Fazer Login' onPress={_signIn} />
+      
+      <View style={styles.profileContainer}>
+        <Image
+          source={{ uri: user?.user?.photo }}
+          style={styles.profileImage}
+        />
+        <View style={styles.userInfo}>
+          <Text style={styles.userName}>{user?.user?.name}</Text>
+          <Text style={styles.userEmail}>{user?.user?.email}</Text>
+        </View>
+      </View>
 
-      <Text selectable>
-        {JSON.stringify(user)}
+      <Text selectable style={styles.userJson}>
       </Text>
     </View>
   );
 }
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
+    backgroundColor: '#f5f5f5',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  button: {
+    marginBottom: 20,
+  },
+  profileContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  profileImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    borderWidth: 2,
+    borderColor: '#ccc',
+    marginRight: 20,
+  },
+  userInfo: {
+    justifyContent: 'center',
+  },
+  userName: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  userEmail: {
+    fontSize: 16,
+    color: '#666',
+  },
+  userJson: {
+    marginTop: 20,
+    fontSize: 14,
+    color: '#333',
+    textAlign: 'center',
   },
 });

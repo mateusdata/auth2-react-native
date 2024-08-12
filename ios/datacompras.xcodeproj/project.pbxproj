@@ -14,8 +14,7 @@
 		96905EF65AED1B983A6B3ABC /* libPods-datacompras.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-datacompras.a */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
-		50949337549246DC9B0AD069 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9B261F056614EB4A3332C87 /* GoogleService-Info.plist */; };
-		31B32F6373014F499748E9B1 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7B9BF0238749ADB8161E3C /* noop-file.swift */; };
+		815F4C7C9D2749EEA2DC4AB4 /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC394FD811B445C2B284A918 /* noop-file.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +31,8 @@
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-datacompras/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		C9B261F056614EB4A3332C87 /* GoogleService-Info.plist */ = {isa = PBXFileReference; name = "GoogleService-Info.plist"; path = "datacompras/GoogleService-Info.plist"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.xml; explicitFileType = undefined; includeInIndex = 0; };
-		7F7B9BF0238749ADB8161E3C /* noop-file.swift */ = {isa = PBXFileReference; name = "noop-file.swift"; path = "datacompras/noop-file.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
-		43F9023515C548A8AB8189B9 /* datacompras-Bridging-Header.h */ = {isa = PBXFileReference; name = "datacompras-Bridging-Header.h"; path = "datacompras/datacompras-Bridging-Header.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		DC394FD811B445C2B284A918 /* noop-file.swift */ = {isa = PBXFileReference; name = "noop-file.swift"; path = "datacompras/noop-file.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
+		E08D3634D43D47CC9CBB9395 /* datacompras-Bridging-Header.h */ = {isa = PBXFileReference; name = "datacompras-Bridging-Header.h"; path = "datacompras/datacompras-Bridging-Header.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +57,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				C9B261F056614EB4A3332C87 /* GoogleService-Info.plist */,
-				7F7B9BF0238749ADB8161E3C /* noop-file.swift */,
-				43F9023515C548A8AB8189B9 /* datacompras-Bridging-Header.h */,
+				DC394FD811B445C2B284A918 /* noop-file.swift */,
+				E08D3634D43D47CC9CBB9395 /* datacompras-Bridging-Header.h */,
 			);
 			name = datacompras;
 			sourceTree = "<group>";
@@ -201,8 +198,7 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				50949337549246DC9B0AD069 /* GoogleService-Info.plist in Resources */,
-				6FA9BE1AF55F4C51BAF406BC /* datacompras-Bridging-Header.h in Resources */,
+				2E12617835C14DE29E28DAB1 /* datacompras-Bridging-Header.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +274,7 @@
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */,
-				31B32F6373014F499748E9B1 /* noop-file.swift in Sources */,
+				815F4C7C9D2749EEA2DC4AB4 /* noop-file.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +302,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.projetofono10.datacompras";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teste.teste";
 				PRODUCT_NAME = "datacompras";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -333,7 +329,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.projetofono10.datacompras";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teste.teste";
 				PRODUCT_NAME = "datacompras";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

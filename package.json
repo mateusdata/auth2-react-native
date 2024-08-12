@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "@react-native-google-signin/google-signin": "^12.2.1",
+    "@stripe/stripe-react-native": "^0.38.4",
     "axios": "^1.7.2",
     "expo": "~51.0.22",
     "expo-constants": "~16.0.2",
-    "expo-dev-client": "~4.0.20",
     "expo-linking": "~6.3.1",
     "expo-router": "~3.5.18",
     "expo-status-bar": "~1.12.1",

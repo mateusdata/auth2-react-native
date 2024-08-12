@@ -28,13 +28,7 @@
         <key>CFBundleURLSchemes</key>
         <array>
           <string>datacompras</string>
-          <string>com.projetofono10.datacompras</string>
-        </array>
-      </dict>
-      <dict>
-        <key>CFBundleURLSchemes</key>
-        <array>
-          <string>com.googleusercontent.apps.726353729050-4mk6f6k9q8pljp8inrksvsr3ok2h3r0v</string>
+          <string>com.teste.teste</string>
         </array>
       </dict>
       <dict>

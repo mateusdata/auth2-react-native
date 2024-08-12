@@ -1,4 +1,4 @@
-package com.projetofono10.datacompras
+package com.teste.teste
 
 import android.app.Application
 import android.content.res.Configuration

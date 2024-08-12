@@ -1,11 +1,11 @@
 import { Link } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function Store() {
+export default function Compras() {
   return (
     <View style={styles.container}>
-      <Text>Pagina de compras</Text>
-      <Link href={"/login"}>login</Link>
+      <Text>pagina de Compras</Text>
+      <Link href={"/"}>index</Link>
     </View>
   );
 }

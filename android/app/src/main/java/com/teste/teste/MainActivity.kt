@@ -1,4 +1,4 @@
-package com.projetofono10.datacompras
+package com.teste.teste
 
 import android.os.Build
 import android.os.Bundle

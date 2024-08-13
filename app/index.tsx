@@ -9,7 +9,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   const fetchPaymentIntentClientSecret = async () => {
-    const response = await axios.post('https://c6ce-181-216-222-58.ngrok-free.app/create-payment-intent');
+    const response = await axios.post(' https://7c6c-181-216-222-58.ngrok-free.app/create-payment-intent');
     const { clientSecret } = await response.data;
     console.log(clientSecret);
     return clientSecret;
@@ -57,7 +57,7 @@ const App = () => {
     //setPublishableKey("pk_test_51PkZocF3eT0VBesaSkxkDLEKMJuMgzSPXtLh1pWBSe2U8Cv9NiAFbgkem6VoqbaNJpkp3C2sgYBpGMxDkmMp7phS00hK9OiRlo");
 
     try {
-      const response = await axios.get('https://c6ce-181-216-222-58.ngrok-free.app/publishable-key');
+      const response = await axios.get(' https://7c6c-181-216-222-58.ngrok-free.app/publishable-key');
       setTimeout(() => {
         setPublishableKey(response.data);
 

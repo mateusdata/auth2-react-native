@@ -25,9 +25,9 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
-        <data android:scheme="datacompras"/>
-        <data android:scheme="com.teste.teste"/>
-        <data android:scheme="exp+datacompras"/>
+        <data android:scheme="farofa"/>
+        <data android:scheme="com.farofa.farofa"/>
+        <data android:scheme="exp+farofa"/>
       </intent-filter>
     </activity>
     <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" android:exported="false"/>

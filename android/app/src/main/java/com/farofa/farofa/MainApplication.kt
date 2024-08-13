@@ -1,4 +1,4 @@
-package com.teste.teste
+package com.farofa.farofa
 
 import android.app.Application
 import android.content.res.Configuration

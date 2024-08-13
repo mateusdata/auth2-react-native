@@ -1,4 +1,4 @@
-package com.teste.teste
+package com.farofa.farofa
 
 import android.os.Build
 import android.os.Bundle

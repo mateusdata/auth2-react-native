@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "datacompras",
-    "slug": "datacompras",
-    "scheme": "datacompras",
+    "name": "Meuapp",
+    "slug": "farofa",
+    "scheme": "farofa",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -14,14 +14,14 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.teste.teste"
+      "bundleIdentifier": "com.farofa.farofa"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.teste.teste"
+      "package": "com.farofa.farofa"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -29,15 +29,17 @@
     "extra": {
       "router": {
         "origin": false
+      },
+      "eas": {
+        "projectId": "06bb6097-f316-47a6-91bc-7759ae14f486"
       }
     },
     "plugins": [
       "expo-router",
-      "@react-native-google-signin/google-signin",
       [
         "@stripe/stripe-react-native",
         {
-          "merchantIdentifier":"",
+          "merchantIdentifier": "",
           "enableGooglePay": true
         }
       ]

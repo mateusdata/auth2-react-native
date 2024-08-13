@@ -1,85 +1,119 @@
-import { confirmPlatformPayPayment, PlatformPay, PlatformPayButton, StripeProvider } from '@stripe/stripe-react-native';
-import { useEffect, useState } from 'react';
-import { Alert, View } from 'react-native';
-import { api } from '../config/api';
+import React, { useEffect, useState } from 'react';
+import { Alert, View, Text, StyleSheet, Button, ActivityIndicator, Pressable, Image } from 'react-native';
+import { StripeProvider, PlatformPay, PlatformPayButton, confirmPlatformPayPayment, usePlatformPay } from '@stripe/stripe-react-native';
 import axios from 'axios';
+import { StatusBar } from 'expo-status-bar';
 
-function App() {
+const App = () => {
   const [publishableKey, setPublishableKey] = useState('');
-
+  const [loading, setLoading] = useState(true);
 
   const fetchPaymentIntentClientSecret = async () => {
-    const response = await api.post("/create-payment-intent");
+    const response = await axios.post('https://c6ce-181-216-222-58.ngrok-free.app/create-payment-intent');
     const { clientSecret } = await response.data;
     console.log(clientSecret);
-
     return clientSecret;
   };
 
-
   const pay = async () => {
-    const clientSecret = await fetchPaymentIntentClientSecret();
+    try {
+      const clientSecret = await fetchPaymentIntentClientSecret();
 
-    const { error } = await confirmPlatformPayPayment(
-      clientSecret,
-      {
-        googlePay: {
-          testEnv: true,
-          merchantName: 'Data compras INC',
-          merchantCountryCode: 'BR',
-          currencyCode: 'brl',
-          billingAddressConfig: {
-            format: PlatformPay.BillingAddressFormat.Full,
-            isPhoneNumberRequired: true,
-            isRequired: true,
+      const { error } = await confirmPlatformPayPayment(
+        clientSecret,
+        {
+          googlePay: {
+            testEnv: true,
+            merchantName: 'Data Compras INC',
+            merchantCountryCode: 'BR',
+            currencyCode: 'brl',
+            billingAddressConfig: {
+              format: PlatformPay.BillingAddressFormat.Full,
+              isPhoneNumberRequired: true,
+              isRequired: true,
+            },
           },
-        },
-      }
-    );
+        }
+      );
 
-    if (error) {
-      Alert.alert(error.code, error.message);
-      console.log(error.code + error.message)
-      // Update UI to prompt user to retry payment (and possibly another payment method)
-      return;
+      if (error) {
+        Alert.alert(error.code, error.message);
+
+        console.log(error.code + error.message);
+        return;
+      }
+
+      Alert.alert('Success', 'The payment was confirmed successfully.');
+      console.log('Deu certo');
+    } catch (err) {
+      // Handle any unexpected errors that occur
+      Alert.alert('Error', 'An unexpected error occurred.');
+      console.error('Unexpected error:', err);
     }
-    Alert.alert('Success', 'The payment was confirmed successfully.');
-    console.log("Deu certo")
   };
 
+
   const fetchPublishableKey = async () => {
+    //setPublishableKey("pk_test_51PkZocF3eT0VBesaSkxkDLEKMJuMgzSPXtLh1pWBSe2U8Cv9NiAFbgkem6VoqbaNJpkp3C2sgYBpGMxDkmMp7phS00hK9OiRlo");
 
     try {
+      const response = await axios.get('https://c6ce-181-216-222-58.ngrok-free.app/publishable-key');
+      setTimeout(() => {
+        setPublishableKey(response.data);
 
-      const response = await api.get("/publishable-key");
-      setPublishableKey(response.data);
-      console.log(response.data)
-
+      }, 0);
+      setLoading(false)
     } catch (error) {
-      console.log(error);
-
+      console.error('Error fetching publishable key:', error);
+      Alert.alert('Error', 'Failed to fetch publishable key');
     }
+
   };
 
   useEffect(() => {
     fetchPublishableKey();
   }, []);
 
+
+  if (!publishableKey) {
+    return (
+      <View >
+        <Text>Carregando... </Text>
+        <ActivityIndicator size={50} color={"blue"} />
+      </View>
+    );
+  }
   return (
-    <StripeProvider
-      publishableKey={publishableKey}
-      merchantIdentifier="merchant.identifier" // required for Apple Pay
-      urlScheme="datacompras" // required for 3D Secure and bank redirects
-    >
-      <PlatformPayButton
-        type={PlatformPay.ButtonType.Pay}
-        onPress={pay}
-        style={{
-          width: '100%',
-          height: 50,
-        }}
-      />
-    </StripeProvider >
+    <View className='flex-1 p-4'>
+      <StatusBar animated style='auto' />
+      <StripeProvider
+        publishableKey={publishableKey}
+        merchantIdentifier="merchant.identifier" // required for Apple Pay
+        urlScheme="farofa" // required for 3D Secure and bank redirects
+      >
+        <View>
+          <View className='items-center rounded-3xl justify-center border border-blue-600 my-7 h-52'>
+            <Text >Batata Frita com Calinha d'Água</Text>
+            <Text >R$10,00 </Text>
+          </View>
+
+          <Pressable android_ripple={{ color: "blue" }}
+            className='bg-gray-950  items-center justify-center rounded-xl flex-row top-3'
+            onPress={pay}>
+            <Text className='text-white text-lg'>
+              Pagar com o google 
+            </Text>
+            <Image 
+            source={{ uri: "https://static.vecteezy.com/system/resources/previews/021/496/254/original/google-pay-logo-symbol-white-design-illustration-with-black-background-free-vector.jpg" }} 
+            className='h-12 w-12'
+            resizeMode='stretch'
+            />
+          </Pressable>
+        </View>
+      </StripeProvider>
+    </View>
   );
-}
-export default App
+};
+
+
+export default App;
